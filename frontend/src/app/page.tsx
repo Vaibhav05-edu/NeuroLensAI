@@ -8,8 +8,19 @@ import Link from "next/link";
 import CognitiveDashboard from "@/components/CognitiveDashboard";
 import JournalInput from "@/components/JournalInput";
 
+interface CognitiveTwin {
+  user_id: string;
+  focus_score: number;
+  stress_index: number;
+  burnout_probability: number;
+  motivation_index: number;
+  emotional_stability: number;
+  readiness_score: number;
+  last_updated: string;
+}
+
 export default function Home() {
-  const [twinData, setTwinData] = useState(null);
+  const [twinData, setTwinData] = useState<CognitiveTwin | null>(null);
   const [showJournalModal, setShowJournalModal] = useState(false);
   const [journalText, setJournalText] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
