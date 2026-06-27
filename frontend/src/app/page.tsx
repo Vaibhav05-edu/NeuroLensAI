@@ -15,7 +15,7 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showFutureSelf, setShowFutureSelf] = useState(false);
   const [futureSelfResponse, setFutureSelfResponse] = useState("");
-  const [recoveryTasks, setRecoveryTasks] = useState([]);
+  const [recoveryTasks, setRecoveryTasks] = useState<{ icon: string; title: string; description: string }[]>([]);
   const [isLoadingFuture, setIsLoadingFuture] = useState(false);
 
   const fetchTwinData = async () => {
